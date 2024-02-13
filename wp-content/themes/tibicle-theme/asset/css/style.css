@@ -221,6 +221,7 @@ a{
   overflow-y: hidden;
 }
 .sidebar ul li.item-show {
+  transition: all 1s ease;
   overflow-y: unset;
 }
 .sidebar ul li .item{
@@ -1835,6 +1836,7 @@ a{
   height: 20.2rem;
   width: 100%;
   overflow: hidden;
+  border-radius: 15px;
 }
 
 .projects-section .project-list .project .project-img img {

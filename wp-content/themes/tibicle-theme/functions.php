@@ -183,12 +183,12 @@ function portfolio_post_type() {
         'name'               => _x( 'Portfolio', 'post type general name' ),
         'singular_name'      => _x( 'Portfolio Item', 'post type singular name' ),
         'menu_name'          => _x( 'Portfolio', 'admin menu' ),
-        'add_new'            => _x( 'Add Portfolio Item', 'portfolio' ),
+        'add_new'            => _x( 'Add Portfolio', 'portfolio' ),
         'add_new_item'       => __( 'Add New Portfolio Item' ),
         'new_item'           => __( 'New Portfolio Item' ),
         'edit_item'          => __( 'Edit Portfolio Item' ),
         'view_item'          => __( 'View Portfolio Item' ),
-        'all_items'          => __( 'All Portfolio Items' ),
+        'all_items'          => __( 'All Portfolio' ),
         'search_items'       => __( 'Search Portfolio Items' ),
         'not_found'          => __( 'No portfolio items found' ),
         'not_found_in_trash' => __( 'No portfolio items found in Trash' ),
@@ -246,21 +246,6 @@ function porfolo_catagory_taxonomy() {
 add_action('init', 'porfolo_catagory_taxonomy');
 
 
-
-// The proper way to enqueue GSAP script in WordPress
-
-// wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
-function theme_gsap_script(){
-    // The core GSAP library
-    wp_enqueue_script( 'gsap-js', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js', array(), false, true );
-    // ScrollTrigger - with gsap.js passed as a dependency
-    wp_enqueue_script( 'gsap-st', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js', array('gsap-js'), false, true );
-    // Your animation code file - with gsap.js passed as a dependency
-    wp_enqueue_script( 'gsap-js2', get_template_directory_uri() . 'js/app.js', array('gsap-js'), false, true );
-}
-
-add_action( 'wp_enqueue_scripts', 'theme_gsap_script' );
-
 function add_script()
 {
 	
@@ -275,3 +260,4 @@ function cc_mime_types($mimes) {
     return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+

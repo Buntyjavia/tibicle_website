@@ -1,3 +1,4 @@
+
 function sidebar_open() {
 	var element = document.getElementById("mySidebar");
 	 element.classList.add("sidebar-open");

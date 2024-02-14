@@ -60,7 +60,7 @@ if ($portfolio_query->have_posts()) :
         }
         ?>
         <?php if (has_post_thumbnail()) : ?>
-            <div class="project <?php echo esc_attr($category_class); ?>" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="project <?php echo esc_attr($category_class); ?>">
                 <div class="project-img">
                     <?php
                    $project_image_in_all_projects = get_field('project_image_in_all_projects');
@@ -87,7 +87,7 @@ if ($portfolio_query->have_posts()) :
                     </div>
                     <div class="project-name">
                         
-                        <span><?php the_title(); ?></span>
+                       <a href="http://localhost/tibicle/portfolio/<?php echo sanitize_title(get_the_title()); ?>" target="_blank"><span><?php the_title(); ?></span></a> 
                         <span class="border-text"></span>
                     </div>
                 </div>

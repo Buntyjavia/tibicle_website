@@ -34,12 +34,12 @@ get_header();
     </div>
   </section>
     <section class="container">
-     <div class="slider-section" id="demo">
+     <div class="slider-section" id="slider_box">
       <div class="slider-header ml-180">
         <div class="title">Our Work</div>
         <button class="project-btn">
-            <span><a href="http://localhost/tibicle/all-projects/">All Projects</a></span>
-            <div class="right-arrow">
+            <a href="http://localhost/tibicle/all-projects/"><span>All Projects</span>
+            <div class="right-arrow"></a>
                 <img src="<?php echo get_template_directory_uri(); ?>/asset/img/white-right-arrow.svg" alt="arrow">
             </div>
         </button>
@@ -60,11 +60,12 @@ get_header();
 
                 $title_slug = sanitize_title(get_the_title());
                 $category_class .= $title_slug . '-project';
+                $color = get_field('project_background_color');
                 ?>
                 <?php if (has_post_thumbnail()) : ?>
                     <div class="slider panel <?php echo esc_attr($category_class); ?>">
                         <div class="slider-img">
-                            <div class="image" onmouseover="mouseOver()" onmouseout="mouseOut()">
+                            <div class="image" data-color="<?php echo $color; ?>" onmouseover="get_bg_color(this)" onmouseout="mouseOut()">
                                 <?php
                                 $post_thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
                                 if ($post_thumbnail_url) {

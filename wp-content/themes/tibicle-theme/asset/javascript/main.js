@@ -26,12 +26,12 @@ function sidebar_close() {
 }
 
 
-  function mouseOver() {
-	document.getElementById("demo").style.background = "#B4B0FF";
-  }
+function get_bg_color(bg_color) {
+	document.getElementById("slider_box").style.background = bg_color.getAttribute('data-color');
+}
   
   function mouseOut() {
-	document.getElementById("demo").style.background = "#2B3242";
+	document.getElementById("slider_box").style.background = "#2B3242";
   }
 
 

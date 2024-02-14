@@ -692,11 +692,13 @@ a{
       height: 100vh;
       background: #2B3242;
   }
+ 
   .slider-section .slider-header {
       padding: 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      
   }
   .slider-section .slider-header .title{
       display: flex;
@@ -756,6 +758,7 @@ a{
     overflow: hidden;
     max-height: calc(100vh - 9.5rem);
     position: relative;
+    padding-top: 20px;
   }
   .slider-inner .latest-work{ 
     color: #FFF;
@@ -808,14 +811,17 @@ a{
   .slider-content .slider.voffis-project .slider-img .image:hover{
     border-radius: 0.8rem;
     border: 0.25rem solid #9B98FD;
+    scale: 1.1;
   }
   .slider-content .slider.we-amor-project .slider-img .image:hover{
     border-radius: 0.8rem;
-    border: 0.25rem solid #FDCBCC;
+    border: 0.25rem solid #f08d8f;
+    scale: 1.1;
   }
   .slider-content .slider.my-church-project .slider-img .image:hover{
     border-radius: 0.8rem;
-    border: 0.25rem solid #FFE9BB;
+    border: 0.25rem solid #eecd85;
+    scale: 1.1;
   }
   .slider-content .slider:last-child{
       margin-right: 0rem;
@@ -839,12 +845,17 @@ a{
     overflow: hidden;
     width: 100%;
     border-radius: 0.8rem;
+    transition: all 0.5s ease-in-out;
   }
   .slider-content .slider .slider-img .image img{
       width: 100%;
       height: 100%;
+      scale: 1.1;
+      transition: all 1s ease-in-out;
   }
-  
+  .slider-content .slider .slider-img .image:hover .slider-content .slider .slider-img .image img{
+    scale: 1;
+  }
   .slider-content .slider .slider-img .project-name span{
     position: absolute;
     bottom: -0.563rem;
@@ -867,8 +878,8 @@ a{
   }
   .slider-content .slider.my-church-project .project-name span{
     color: #FFE9BB;
-    -webkit-text-stroke: 0.0625rem #FFD884;
-    text-stroke: 0.0625rem #FFD884;
+    -webkit-text-stroke: 0.0625rem #f8aa01;
+    text-stroke: 0.0625rem #f8aa01;
   }
   
   .slider-content .slider .project-details .see-more-btn{
@@ -916,6 +927,9 @@ a{
     background-color: #fff;
   }
   
+  #slider_box{
+    transition: 0.5s ease-in-out;
+  }
   @media only screen and (max-width: 1366px) {
     .slider-content .slick-list .slick-track .slick-slide:nth-child(odd){
       margin-top: 5%;
@@ -1059,6 +1073,7 @@ a{
     .slider-section .slider-header .project-btn span{
       padding: 0rem 0.13rem;
       font-size: 0.875rem;
+      color: white;
     }
     .slider-section .slider-header .project-btn .right-arrow{
       padding: 0.4rem;

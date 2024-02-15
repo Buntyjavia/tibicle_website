@@ -462,7 +462,7 @@ get_header();
 get_footer();
 
 ?>
-```<script>
+<script>
    gsap.registerPlugin(ScrollTrigger);
 
 /*-- ScrollTrigger 1: sections scroll and snap vertically ------*/
@@ -516,9 +516,6 @@ panels.forEach((panel, i) => sectionPositions.push((start + i * each) / max)); /
 snap = ScrollTrigger.snapDirectional(sectionPositions); // a snapping function that we can just feed a scroll value to and a direction and it'll spit back the closest one (ratio/progress) in that direction
 });
 
-var demo5 = new CircleType(document.getElementById('demo5'))
-  .radius(400);
-$(demo5.element).fitText();
 </script>
 <?php
 

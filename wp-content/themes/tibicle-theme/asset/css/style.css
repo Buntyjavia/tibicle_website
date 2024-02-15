@@ -108,7 +108,6 @@ a{
 /* sidebar design css start  */
 
 .sidebar{
-  /* opacity: 0; */
   display: flex;
   left: -100%;
   width: 0;
@@ -118,6 +117,7 @@ a{
   background-color: #0C0908;
   transform:translateX(-100%);
   z-index: 2;
+  bottom: 0;
 }
 .sidebar-open{
   display: block;
@@ -174,6 +174,11 @@ a{
   display: flex;
 }
 
+.sidebar-content ul{
+  list-style: none;
+  position: relative;
+  z-index: 1;
+}
 .sidebar-content ul li{
   margin: 0rem 4.75rem 2.5rem;
 }
@@ -343,7 +348,7 @@ a{
  background-color: #fff;
  position: absolute;
  top: -160%;
- left: 1.88rem;
+ left: 1.78rem;
 }
 .sidebar-footer .social-media-icon .icon{
   margin-bottom: 1.57rem;
@@ -535,8 +540,8 @@ a{
 
 
 .ml-180{
-    margin-left: 180px;
-    width: calc(100% - 180px);
+    margin-left: 11.25rem;
+    width: calc(100% - 11.25rem);
 }
 
 @media only screen and (max-width: 1024px){
@@ -575,7 +580,7 @@ a{
   .tiblers-section .title{
     font-size: 1.5rem;
     font-weight: 500;
-    line-height: 29px;
+    line-height: 1.8125rem;
     letter-spacing: 0.4em;
     text-align: left; 
     color: #B6B6B6; 
@@ -640,7 +645,7 @@ a{
     height: 0.7rem;
     border-radius: 1rem;
     border: 0.0625rem solid #000;
-    margin-top: 5px;
+    margin-top: 0.3125rem;
   }
 
 @media only screen and (max-width: 1024px){
@@ -730,7 +735,7 @@ a{
 }
 .slider-section .slider-header .project-btn .right-arrow{
   padding: 0.75rem 3.25rem;
-  border-radius: 50px;
+  border-radius: 3.125rem;
   background-color: #957FFB;
 }
 .slider-section .slider-header .project-btn .right-arrow img{
@@ -741,7 +746,7 @@ a{
 
 .slider-content{
 height: 100%;
-/* max-height: calc(100vh - 15.5rem); */
+max-height: calc(100vh - 15.5rem);
 display: flex;
 }
 .slider-inner{
@@ -793,7 +798,8 @@ min-width: 17.9rem;
 /* slider css end */
 .slider-content .slider{
 background: #D9D9D9;
-width: 18rem;
+max-width: 23rem;
+width: 100%;
 max-height: calc(100% - 13rem);
 margin-right: 9rem;
 position: relative;
@@ -844,11 +850,11 @@ border-radius: 0.8rem;
 position: absolute;
 bottom: -0.563rem;
 left: -25%;
-font-size: 45px;
+font-size: 2.8125rem;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-max-width: 230px;
+max-width: 14.375rem;
 }
 .slider-content .slider.voffis-project .project-name span{
   -webkit-text-stroke: 0.0625rem #E3E1FF;
@@ -905,23 +911,11 @@ line-height: normal;
 .slider-content .slider .project-details span::before{
 content: "";
 display: inline-block;
-width: 50px;
-height: 1px;
-margin: 5px;
+width: 3.125rem;
+height: 0.0625rem;
+margin: 0.3125rem;
 background-color: #fff;
 }
-
-/* @media only screen and (max-width: 1366px) {
-.slider-content .slick-list .slick-track .slick-slide:nth-child(odd){
-  margin-top: 5%;
-}
-} */
-
-/* @media only screen and (max-height: 700px) {
-.slider-content .slick-list .slick-track .slick-slide:nth-child(odd){
-  margin-top: 5%;
-}
-} */
 
 
 @media only screen and (max-width: 1024px) {
@@ -957,7 +951,16 @@ background-color: #fff;
 
 
 @media screen and  (max-width:767px){
-
+.sidebar-content ul li{
+  margin: 0rem 3.25rem 2rem;
+}
+.sidebar-content ul li .item .item-name a{
+  font-size: 1.25rem;
+}
+.sidebar-content ul li .item .item-name p{
+  font-size: 1.875rem;
+  top: 0.2rem;
+}
 
 .slider-section .slider-header{
   margin: 0;
@@ -1084,42 +1087,6 @@ background-color: #fff;
     height: 100%;
 }
 
-@media screen and (min-width: 768px) {
-  .services-section .services-content .services-list .services-item:nth-child(n+4){
-    border-bottom: none;
-  }
-}
-@media screen and (max-width: 1024px) {
-    .services-section .services-content .services-list .services-item{
-        padding: 1.5rem 1rem;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .services-section .services-content .header-title {
-        padding-top: 2.3rem;
-    }
-    .services-section .services-content .services-list{
-        margin-top: 1rem;
-    }
-    .services-section .services-content .services-list .services-item{
-        width: 100%;
-    }
-    .services-section .services-content .services-list .services-item .services-icon{
-        width: 4.5rem;
-        height: 4.5rem;
-    }
-    .services-section .services-content .services-list .services-item .services-icon .icon{
-        width: 4.2rem;
-        height: 4.2rem;
-    }
-    .services-section .services-content .services-list .services-item{
-      border-right: none;
-    }
-    .services-section .services-content .services-list .services-item:last-child{
-       border-bottom: none;
-    }
-}
 
 /* services section design css end  */
 
@@ -1144,15 +1111,17 @@ background-color: #fff;
  display: none;
 }
 .hire-section .hire-content .left-section p {
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1.3125rem;
-    color: #000;
-    margin-bottom: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.3125rem;
+  color: #000;
+  margin-bottom: 0;
+  margin-top: 3.125rem;
 }
 .hire-section .hire-content{
-    display: flex;
-    align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
+  margin-top: 3rem;
 }
 .hire-section .hire-content .left-section{
    width: 60%;
@@ -1211,52 +1180,6 @@ background-color: #fff;
     width: 40%;
 }
 
-@media screen and (max-width: 1024px){
-  .hire-section .hire-content{
-      flex-wrap: wrap;
-      flex-direction: column-reverse;
-  }
-  .hire-section .hire-content .left-section{
-    width: 100%;
-  }
-  .hire-section .hire-content .right-section{
-    margin-bottom: 3rem;
-    width: 100%;
-  }
-  .hire-section .hire-content .right-section .image{
-    display: flex;
-    justify-content: center;
-  }
-  .hire-section .hire-content .left-section form{
-    padding: 1rem;
-  }
-  .hire-section .hire-content .left-section form{
-    padding: 1rem;
-  }
-  .hire-section .hire-content .left-section .contact-info{
-    padding: 1rem;
-  }
-  .hire-section .hire-content .left-section p{
-    padding: 1rem;
-  }
- 
-}
-@media screen and (max-width: 767px){
-  .hire-section .hire-content .left-section .contact-info{
-    flex-wrap: wrap;
-    margin: 0rem;
-  }
-  .hire-section .hire-content .left-section .header-title{
-    padding-top: 2.3rem;
-  }
-  .hire-section .hire-content .left-section form .input-field{
-    width: 100%;
-  }
-  .hire-section .left-section .header-title .border-text{
-    top: 0;
-  }
-}
-
 
 /* hire section design css end  */
 
@@ -1277,7 +1200,7 @@ background-color: #fff;
   right: 0;
   top: 0;
   width: 100%;
-  height: calc(100% + 50px);
+  height: calc(100% + 3.125rem);
 }
 .join-section .join-content .image img{
   width: 100%;
@@ -1339,24 +1262,168 @@ background-color: #fff;
   margin-bottom: 45%;
 }
 
-@media screen and (max-width: 1024px){
-  .join-content{
-    padding: 1rem;
-  }
-  .join-section .join-content .image{
-    width: max-content;
-    height: calc(100% + 60px);
-  }
-  .join-section .join-content .left-section{
-    padding-left: 0px;
-    padding-top: 0px;
-  }
-  /* .join-section .join-content .right-section{
-    width: 49%;
-  } */
+/* join section design css end  */
+
+/* our life@t page design start  */
+
+.our-life-section{
+  background: #2B3242;
+}
+.our-life-section .header-title{
+  padding-top: 6.3rem;
 }
 
-/* join section design css end  */
+.our-life-section .our-life-content{
+  height: 100%;
+  position: relative;
+}
+.our-life-section .our-life-content .tree-image{
+  position: absolute;
+  top: 40%;
+  left: 15%;
+}
+.our-life-section .our-life-content .tree-image-two{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+}
+.our-life-section .our-life-content .tree-image-three{
+  position: absolute;
+    left: 80%;
+    top: 80%;
+}
+.our-life-section .our-life-content p{
+  color: #fff;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.5rem;
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+
+}
+.our-life-section .our-life-content p span{
+  font-weight: 500;
+  font-style: normal;
+}
+.our-life-section .our-life-content .our-life{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(100% - 13.75rem);
+}
+.our-life-section .our-life-content .our-life .life-section{
+  position: relative;
+  width: 26%;
+  flex-wrap: wrap;
+}
+.our-life-section .our-life-content .our-life .life-section.dinner-section{
+  width: 22.5rem;
+}
+.our-life-section .our-life-content .our-life .life-section h4{
+  font-size: 17rem;
+  font-weight: 900;
+  line-height: 13rem;
+  margin: 0;
+  width: fit-content;
+  cursor: pointer;
+}
+.our-life-section .our-life-content .our-life .life-section.trips-section h4{
+  -webkit-text-stroke: 0.1875rem #9E8BFB;
+  text-stroke: 0.1875rem #9E8BFB;
+  color: transparent;
+}
+.our-life-section .our-life-content .our-life .life-section.rejoice-section h4{
+  -webkit-text-stroke: 0.1875rem #F7DD97;
+  text-stroke: 0.1875rem #F7DD97;
+  color: transparent;
+}
+.our-life-section .our-life-content .our-life .life-section.dinner-section h4{
+  -webkit-text-stroke: 0.1875rem #D5E18A;
+  text-stroke: 0.1875rem #D5E18A;
+  color: transparent;
+}
+.our-life-section .our-life-content .our-life .life-section.dinner-section .dinner-text{
+  position: absolute;
+  top: 0.9375rem;
+  left: 58%;
+  margin: 0;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.our-life-section .our-life-content .our-life .life-section.dinner-section .image{
+  position: absolute;
+  bottom: 0;
+  left: 0.625rem;
+}
+.our-life-section .our-life-content .our-life .life-section.dinner-section span{
+  font-size: 4.4375rem;
+  font-weight: 900;
+  line-height: 6.6875rem;
+  color: #444C4D;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  transform-origin: top center;
+}
+.our-life-section .our-life-content .our-life .life-section.dinner-section span:nth-child(1){
+  transform: translate(8.0875rem, 0.0313rem) rotate(40deg);
+}
+.our-life-section .our-life-content .our-life .life-section.dinner-section span:nth-child(2){
+  transform: translate(4.175rem, -2.2375rem) rotate(20deg);
+}
+.our-life-section .our-life-content .our-life .life-section.dinner-section span:nth-child(3){
+  transform: translate(0.125rem, -2.8125rem) rotate(-3deg);
+}
+.our-life-section .our-life-content .our-life .life-section.dinner-section span:nth-child(4){
+  transform: translate(-5.0875rem, -1.2rem) rotate(-31deg);
+}
+.our-life-section .our-life-content .our-life .life-section.dinner-section span:nth-child(5){
+  transform: translate(-8.7625rem, 0.8875rem) rotate(-43deg);
+}
+
+.our-life-section .our-life-content .our-life .life-section.trips-section .trips-text{
+  position: absolute;
+  bottom: 0;
+  left: 7.4rem;
+}
+.our-life-section .our-life-content .our-life .life-section.trips-section .image{
+  position: absolute;
+  bottom: -0.3125rem;
+  left: -0.5rem;
+}
+.our-life-section .our-life-content .our-life .life-section.trips-section .trips-text span{
+  display: flex;
+  align-items: center;
+  font-size: 5.875rem;
+  font-weight: 900;
+  line-height: 5rem;
+  color: #43475E;
+}
+.our-life-section .our-life-content .our-life .life-section.rejoice-section .trips-text{
+  position: absolute;
+  bottom: 3.125rem;
+  left: 6.875rem;
+  transform: rotate(-90deg);
+}
+.our-life-section .our-life-content .our-life .life-section.rejoice-section .image{
+  position: absolute;
+  bottom: 0;
+  left: 0.625rem;
+}
+.our-life-section .our-life-content .our-life .life-section.rejoice-section .trips-text span{
+  display: flex;
+  align-items: center;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: normal;
+  color: #4A4C4F;
+  cursor: pointer;
+}
+
+/* our life@t page design end  */
 
 
 
@@ -1392,6 +1459,8 @@ background-color: #fff;
 .header-title .border-text::after{
    display: none;
 }
+
+
 .section{
     height: 100vh;
 }
@@ -1424,37 +1493,8 @@ background-color: #fff;
     line-height: normal;
     color: #A2A2A2;
     font-weight: 400;
-    /* margin-top: 0.3125rem; */
   }
 
-
-@media screen and (max-width: 1024px) {
-  .section{
-    height: 100%;
-  }
-  .header-title{
-      padding: 1rem;
-  }
-  .services-section .services-content .services-list .services-item{
-      padding: 1.5rem 1rem;
-  }
-}
-@media screen and (max-width: 767px) {
-    .header-title span{
-      font-size: 2.25rem;
-      line-height: 2.25rem;
-    }
-    .header-title .border-text{
-      top: 0.6rem ;
-    }
-    .services-section .services-content .header-title {
-      padding-top: 2.3rem;
-    }
-
-    .contact-section{
-      margin-bottom: 1rem ;
-    }
-}
 
 
 
@@ -1560,7 +1600,7 @@ background-color: #fff;
 }
 .footer-content .right-section .background-image{
   position: absolute;
-  bottom: -7px;
+  bottom: -0.4375rem;
   width: 100%;
 }
 .copyright-section{
@@ -1587,30 +1627,7 @@ background-color: #fff;
   color: #957FFB;
 }
 
-@media screen and (max-width: 1024px){
-  .footer-section .footer-content{
-    flex-wrap: wrap;
-    padding: 1rem;
-  }
-  .footer-content .left-section{
-    width: 100%;
-  }
-  .footer-content .right-section{
-    width: 100%;
-    min-height: 12.5rem;
-    margin-top: 2rem;
-  }
-}
-@media screen and (max-width: 767px){
-  .footer-content .left-section .list-section ul{
-    flex-wrap: wrap;
-  }
-  .footer-content .left-section .list-section ul li{
-    margin-bottom: 2rem;
-  }
-}
-/* footer design css end */
-
+/* footer design css end  */
 
 
 /* all-projects page design start  */
@@ -1828,44 +1845,6 @@ background-color: #fff;
 .projects-section .project-list .project:hover .project-inner .project-name .border-text {
   opacity: 1;
 }
-
-@media only screen and (max-width: 1024px) {
-  .projects-section {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .projects-section .heading-section {
-    padding: 0 2rem;
-  }
-  .projects-section .heading-section .title span{
-    font-size: 3.75rem;
-  }
-  .projects-section .heading-section .title .border-text{
-    top: 3rem;
-  }
-
-  .projects-section .project-list{
-    padding: 0 2rem;
-  }
-
-}
-@media screen and (max-width: 767px) {
-
-  .projects-section .heading-section {
-    padding: 1rem;
-    flex-wrap: wrap;
-  }
-  .projects-section .project-list .project{
-    max-width: 100%;
-  }
-  .projects-section .project-list{
-    padding: 0 1rem;
-  }
-  .projects-section .heading-section .title .border-text{
-    top: 2rem;
-  }
-}
 /* all-projects page design end  */
 
 
@@ -1968,173 +1947,262 @@ background-color: #fff;
   height: 100%;
 }
 
+/* project details page design end  */
+
+
+/*  ------------------------------------------- responsive design css start ------------------------------------------- */
+
+
+@media screen and (min-width: 768px) {
+  /* services section design css start  */
+  .services-section .services-content .services-list .services-item:nth-child(n+4){
+    border-bottom: none;
+  }
+  /* services section design css end  */
+}
+
+
+
 @media only screen and (max-width: 1024px) {
+  
+/* home page css start */
 
 
 
+
+/* services section design css start  */
+  .services-section .services-content .services-list .services-item{
+      padding: 1.5rem 1rem;
+  }
+
+/* services section design css end  */
+
+
+/* hire section design css start  */
+  .hire-section .hire-content{
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+  .hire-section .hire-content .left-section{
+    width: 100%;
+  }
+  .hire-section .hire-content .right-section{
+    margin-bottom: 3rem;
+    width: 100%;
+  }
+  .hire-section .hire-content .right-section .image{
+    display: flex;
+    justify-content: center;
+  }
+  .hire-section .hire-content .left-section form{
+    padding: 1rem;
+  }
+  .hire-section .hire-content .left-section form{
+    padding: 1rem;
+  }
+  .hire-section .hire-content .left-section .contact-info{
+    padding: 1rem;
+  }
+  .hire-section .hire-content .left-section p{
+    padding: 1rem;
+  }
+
+
+/* hire section design css end  */
+
+/* join section design css start  */
+  .join-content{
+    padding: 1rem;
+  }
+  .join-section .join-content .image{
+    width: max-content;
+    height: calc(100% + 3.75rem);
+  }
+  .join-section .join-content .left-section{
+    padding-left: 0rem;
+    padding-top: 0rem;
+  }
+  
+/* join section design css end  */
+
+   /* our life@t page design start  */
+  .our-life-section .our-life-content .our-life{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+  }
+  .our-life-section .our-life-content .our-life .life-section{
+    margin-bottom: 5rem;
+  }
+  .our-life-section .our-life-content .our-life .life-section:last-child{
+    margin-bottom: 0rem;
+  }
+  .our-life-section .our-life-content p{
+    width: 100%;
+    padding: 2rem;
+  }
+  /* our life@t page design end  */
+  
+  
+  
+  /* home page css end */
+
+
+/* all-projects page design start  */
+  .projects-section {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .projects-section .heading-section {
+    padding: 0 2rem;
+  }
+  .projects-section .heading-section .title span{
+    font-size: 3.75rem;
+  }
+  .projects-section .heading-section .title .border-text{
+    top: 3rem;
+  }
+
+  .projects-section .project-list{
+    padding: 0 2rem;
+  }
+/* all-projects page design end  */
+
+/* footer design css start */
+
+  .footer-section .footer-content{
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  .footer-content .left-section{
+    width: 100%;
+  }
+  .footer-content .right-section{
+    width: 100%;
+    min-height: 12.5rem;
+    margin-top: 2rem;
+  }
+/* footer design css end */
+
+
+
+  .section{
+    height: 100%;
+  }
+  .header-title{
+      padding: 1rem;
+  }
+  .services-section .services-content .services-list .services-item{
+      padding: 1.5rem 1rem;
+  }
+}
+
+@media screen and  (max-width:992px){
+  /* all-projects page design start  */
+  /* all-projects page design end  */
 }
 
 
 @media screen and  (max-width:767px){
+/* home page design css start  */
+
+
+
+/* services section design css start  */
+
+  .services-section .services-content .header-title {
+      padding-top: 2.3rem;
+  }
+  .services-section .services-content .services-list{
+      margin-top: 1rem;
+  }
+  .services-section .services-content .services-list .services-item{
+      width: 100%;
+  }
+  .services-section .services-content .services-list .services-item .services-icon{
+      width: 4.5rem;
+      height: 4.5rem;
+  }
+  .services-section .services-content .services-list .services-item .services-icon .icon{
+      width: 4.2rem;
+      height: 4.2rem;
+  }
+  .services-section .services-content .services-list .services-item{
+    border-right: none;
+  }
+  .services-section .services-content .services-list .services-item:last-child{
+      border-bottom: none;
+  }
+
+/* services section design css end  */
+
+/* hire section design css start  */
+  .hire-section .hire-content .left-section .contact-info{
+    flex-wrap: wrap;
+    margin: 0rem;
+  }
+  .hire-section .hire-content .left-section .header-title{
+    padding-top: 2.3rem;
+  }
+  .hire-section .hire-content .left-section form .input-field{
+    width: 100%;
+  }
+  .hire-section .left-section .header-title .border-text{
+    top: 0;
+  }
   
-}
-/* project details page design end  */
+  
+/* hire section design css end  */
 
-/* our life@t page design start  */
 
-.our-life-section{
-  background: #2B3242;
-}
-.our-life-section .header-title{
-  padding-top: 6.3rem;
-}
+/* home page design css end  */
 
-.our-life-section .our-life-content{
-  height: 100%;
-  position: relative;
-}
-.our-life-section .our-life-content .tree-image{
-  position: absolute;
-  top: 40%;
-  left: 15%;
-}
-.our-life-section .our-life-content .tree-image-two{
-  position: absolute;
-  top: 30%;
-  left: 50%;
-}
-.our-life-section .our-life-content .tree-image-three{
-  position: absolute;
-    left: 80%;
-    top: 80%;
-}
-.our-life-section .our-life-content p{
-  color: #fff;
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: 300;
-  line-height: 1.5rem;
-  width: 40%;
-  margin: 0 auto;
-  text-align: center;
+  /* all-projects page design start  */
+  .projects-section .heading-section {
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+  .projects-section .project-list .project{
+    max-width: 100%;
+  }
+  .projects-section .project-list{
+    padding: 0 1rem;
+  }
+  .projects-section .heading-section .title .border-text{
+    top: 2rem;
+  }
 
-}
-.our-life-section .our-life-content p span{
-  font-weight: 500;
-  font-style: normal;
-}
-.our-life-section .our-life-content .our-life{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: calc(100% - 13.75rem);
-}
-.our-life-section .our-life-content .our-life .life-section{
-  position: relative;
-  width: 26%;
-  flex-wrap: wrap;
-}
-.our-life-section .our-life-content .our-life .life-section.dinner-section{
-  width: 330px;
-}
-.our-life-section .our-life-content .our-life .life-section h4{
-  font-size: 17rem;
-  font-weight: 900;
-  line-height: 13rem;
-  margin: 0;
-  width: fit-content;
-}
-.our-life-section .our-life-content .our-life .life-section.trips-section h4{
-  -webkit-text-stroke: 0.1875rem #9E8BFB;
-  text-stroke: 0.1875rem #9E8BFB;
-  color: transparent;
-}
-.our-life-section .our-life-content .our-life .life-section.rejoice-section h4{
-  -webkit-text-stroke: 0.1875rem #F7DD97;
-  text-stroke: 0.1875rem #F7DD97;
-  color: transparent;
-}
-.our-life-section .our-life-content .our-life .life-section.dinner-section h4{
-  -webkit-text-stroke: 0.1875rem #D5E18A;
-  text-stroke: 0.1875rem #D5E18A;
-  color: transparent;
-}
-.our-life-section .our-life-content .our-life .life-section.dinner-section .dinner-text{
-  position: absolute;
-  top: 0.9375rem;
-  left: 58%;
-  margin: 0;
-  transform: rotate(45deg);
-}
-.our-life-section .our-life-content .our-life .life-section.dinner-section .image{
-  position: absolute;
-  bottom: 0;
-  left: 0.625rem;
-}
-.our-life-section .our-life-content .our-life .life-section.dinner-section span{
-  font-size: 4.4375rem;
-  font-weight: 900;
-  line-height: 6.6875rem;
-  color: #444C4D;
-  position: absolute;
-  top: 0;
-  right: 0;
+  /* all-projects page design end  */
 
-  transform-origin: top center;
-}
-.our-life-section .our-life-content .our-life .life-section.dinner-section span:nth-child(1){
-  transform: translate(9.6875rem, -9px) rotate(40deg);
-}
-.our-life-section .our-life-content .our-life .life-section.dinner-section span:nth-child(2){
-  transform: translate(5.375rem, -2.9375rem) rotate(17deg);
-}
-.our-life-section .our-life-content .our-life .life-section.dinner-section span:nth-child(3){
-  transform: translate(1.625rem, -3.8125rem) rotate(0deg);
-}
-.our-life-section .our-life-content .our-life .life-section.dinner-section span:nth-child(4){
-  transform: translate(-3.6875rem, -2.5rem) rotate(-27deg);
-}
-.our-life-section .our-life-content .our-life .life-section.dinner-section span:nth-child(5){
-  transform: translate(-7.5625rem, -0.3125rem) rotate(-40deg);
-}
+ 
+  /* footer design css start */
+
+  .footer-content .left-section .list-section ul{
+    flex-wrap: wrap;
+  }
+  .footer-content .left-section .list-section ul li{
+    margin-bottom: 2rem;
+  }
+  /* footer design css end */
+
+
+  .header-title span{
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+  }
+  .header-title .border-text{
+    top: 0.6rem ;
+  }
+  .services-section .services-content .header-title {
+    padding-top: 2.3rem;
+  }
+
+  .contact-section{
+    margin-bottom: 1rem ;
+  }
 
 
 
-.our-life-section .our-life-content .our-life .life-section.trips-section .trips-text{
-  position: absolute;
-  bottom: 0;
-  left: 7.4rem;
 }
-.our-life-section .our-life-content .our-life .life-section.trips-section .image{
-  position: absolute;
-    bottom: -0.3125rem;
-    left: -0.5rem;
-}
-.our-life-section .our-life-content .our-life .life-section.trips-section .trips-text span{
-  display: flex;
-  align-items: center;
-  font-size: 5.875rem;
-  font-weight: 900;
-  line-height: 5rem;
-  color: #43475E;
-}
-.our-life-section .our-life-content .our-life .life-section.rejoice-section .trips-text{
-  position: absolute;
-  bottom: 3.125rem;
-  left: 6.875rem;
-  transform: rotate(-90deg);
-}
-.our-life-section .our-life-content .our-life .life-section.rejoice-section .image{
-  position: absolute;
-  bottom: 0;
-  left: 0.625rem;
-}
-.our-life-section .our-life-content .our-life .life-section.rejoice-section .trips-text span{
-  display: flex;
-  align-items: center;
-  font-size: 3.5rem;
-  font-weight: 900;
-  line-height: normal;
-  color: #4A4C4F;
-}
-/* our life@t page design end  */
+/*  ------------------------------------------- responsive design css start ------------------------------------------- */

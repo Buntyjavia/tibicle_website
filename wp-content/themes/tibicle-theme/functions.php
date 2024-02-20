@@ -176,18 +176,30 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function enqueue_custom_scripts() {
+    // Enqueue your JavaScript file
+    wp_enqueue_script('custom-script', get_template_directory_uri() . '/wp-content/themes/tibicle-theme/asset/javascript/main.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+
+function cc_mime_types($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
 function portfolio_post_type() {
     $labels = array(
         'name'               => _x( 'Portfolio', 'post type general name' ),
         'singular_name'      => _x( 'Portfolio Item', 'post type singular name' ),
         'menu_name'          => _x( 'Portfolio', 'admin menu' ),
-        'add_new'            => _x( 'Add Portfolio Item', 'portfolio' ),
-        'add_new_item'       => __( 'Add New Portfolio Item' ),
-        'new_item'           => __( 'New Portfolio Item' ),
-        'edit_item'          => __( 'Edit Portfolio Item' ),
-        'view_item'          => __( 'View Portfolio Item' ),
-        'all_items'          => __( 'All Portfolio Items' ),
-        'search_items'       => __( 'Search Portfolio Items' ),
+        'add_new'            => _x( 'Add Portfolio', 'portfolio' ),
+        'add_new_item'       => __( 'Add New Portfolio' ),
+        'new_item'           => __( 'New Portfolio' ),
+        'edit_item'          => __( 'Edit Portfolio' ),
+        'view_item'          => __( 'View Portfolio' ),
+        'all_items'          => __( 'All Portfolio' ),
+        'search_items'       => __( 'Search Portfolio' ),
         'not_found'          => __( 'No portfolio items found' ),
         'not_found_in_trash' => __( 'No portfolio items found in Trash' ),
     );
@@ -212,7 +224,6 @@ function portfolio_post_type() {
 }
 
 add_action( 'init', 'portfolio_post_type' );
-
 
 function porfolo_catagory_taxonomy() {
     $labels = array(
@@ -242,3 +253,299 @@ function porfolo_catagory_taxonomy() {
 }
 
 add_action('init', 'porfolo_catagory_taxonomy');
+
+
+
+
+function tiblers_shortcode() {
+    ob_start(); ?>
+    <div class="title">Tiblers as in</div>
+    <div class="main-title-section">
+        <div class="main-title">
+            <span>Designer</span> 
+            <p>+Developer</p>
+        </div>
+        <div class="sub-title">
+            <p>“We <span> Digitize</span> Your Dreams That Help You <span>Grow</span> ”</p>
+        </div>
+    </div>
+    <div class="mouse-section">
+        <span></span>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('tiblers', 'tiblers_shortcode');
+
+
+
+
+function shortcode_ourwork() {
+    ob_start();
+    ?>
+    <div class="slider-section" id="slider_box">
+        <div class="slider-header ml-180">
+            <div class="title">Our Work</div>
+            <a href="http://localhost/tibicle/all-projects/">
+                <button class="btn icon-btn">
+                    All Projects
+                    <div class="icon">
+                        <img src="<?php echo esc_url(get_template_directory_uri()) . '/asset/img/arrow-white.svg'; ?>" alt="arrow-icon">
+                    </div>
+                </button>
+            </a>
+        </div>
+        
+        <div class="slider-inner">
+            <div class="slider-content">
+                <?php
+                $portfolio_query = new WP_Query( array(
+                    'post_type'      => 'portfolio',
+                    'posts_per_page' => -1,
+                ) );
+
+                if ( $portfolio_query->have_posts() ) {
+                    while ( $portfolio_query->have_posts() ) {
+                        $portfolio_query->the_post();
+                        $categories     = get_the_terms( get_the_ID(), 'category' );
+                        $category_class = '';
+                        $title_slug     = sanitize_title( get_the_title() );
+                        $category_class .= $title_slug . '-project';
+                        $color          = get_field( 'project_background_color' );
+
+                        if ( has_post_thumbnail() ) {
+                            $post_thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), 'thumbnail' );
+                            $thumbnail_image    = $post_thumbnail_url ? '<img src="' . esc_url( $post_thumbnail_url ) . '" alt="">' : '<img src="' . esc_url( get_template_directory_uri() . '/placeholder-image.jpg' ) . '" alt="Placeholder Image">';
+                            ?>
+                            <div class="slider project_card <?php echo esc_attr( $category_class ); ?>">
+                                <div class="slider-img">
+                                    <div class="image" data-color="<?php echo esc_attr( $color ); ?>" onmouseover="get_bg_color(this)" onmouseout="mouseOut()">
+                                        <?php echo $thumbnail_image; ?>
+                                    </div>
+                                    <div class="project-name">
+                                        <span><?php echo get_the_title(); ?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                    wp_reset_postdata();
+                } else {
+                    echo 'No services found.';
+                }
+                ?>
+            </div>
+            <div class="latest-work">
+                We’d like it if you look at our latest Work
+            </div>
+        </div>
+    </div>
+    <?php
+    $output = ob_get_clean();
+
+    return $output;
+}
+add_shortcode( 'ourwork_section', 'shortcode_ourwork' );
+
+function our_services_shortcode() {
+    ob_start();
+    ?>
+    <div class="services-content">
+        <div class="header-title">
+            <span class="border-text">OUR</span>
+            <span>Services</span>
+        </div>
+        <div class="services-list">
+            <?php if (have_rows('our_services', 'option')) : ?>
+                <?php while (have_rows('our_services', 'option')) : the_row(); ?>
+                    <div class="services-item">
+                        <div class="services-icon">
+                            <div class="icon">
+                                <img src="<?php echo esc_url(get_sub_field('os_image')); ?>" alt="logo">
+                            </div>
+                        </div>
+                        <div class="services-name">
+                            <?php echo esc_html(get_sub_field('os_title')); ?>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+            <?php endif; ?>
+        </div>
+    </div>
+    <?php
+    $output = ob_get_clean();
+
+    return $output;
+}
+add_shortcode('our_services', 'our_services_shortcode');
+
+
+function shortcode_life_at() {
+    ob_start();
+    ?>
+    <div class="our-life-content ml-180">
+        <div class="tree-image">
+            <img src="<?php echo esc_url(get_template_directory_uri()) . '/asset/img/tree-icon.svg'; ?>" alt="tree-icon">
+        </div>
+        <div class="tree-image tree-image-two">
+            <img src="<?php echo esc_url(get_template_directory_uri()) . '/asset/img/tree-icon.svg'; ?>" alt="tree-icon">
+        </div>
+        <div class="tree-image tree-image-three">
+            <img src="<?php echo esc_url(get_template_directory_uri()) . '/asset/img/tree-icon.svg'; ?>" alt="tree-icon">
+        </div>
+        <div class="header-title">
+            <span class="border-text">OUR</span>
+            <span>LIFE@T</span>
+        </div>
+        <div class="our-life">
+            <div class="life-section trips-section">
+                <h4>T</h4>
+                <div class="trips-text">
+                    <span>RIPS</span>
+                </div>
+                <div class="image">
+                    <img src="<?php echo esc_url(get_template_directory_uri()) . '/asset/img/car.svg'; ?>" alt="car-icon">
+                </div>
+            </div>
+            <div class="life-section rejoice-section">
+                <h4>R</h4>
+                <div class="trips-text">
+                    <span>EJOICE</span>
+                </div>
+                <div class="image">
+                    <img src="<?php echo esc_url(get_template_directory_uri()) . '/asset/img/rejoice-icon.svg'; ?>" alt="rejoice-icon">
+                </div>
+            </div>
+            <div class="life-section dinner-section">
+                <h4>D</h4>
+                <div class="dinner-text">
+                    <span>R</span>
+                    <span>E</span>
+                    <span>N</span>
+                    <span>N</span>
+                    <span>I</span>
+                </div>
+                <div class="image">
+                    <img src="<?php echo esc_url(get_template_directory_uri()) . '/asset/img/dinner-icon.svg'; ?>" alt="dinner-icon">
+                </div>
+            </div>
+        </div>
+        <p>
+            “The strength of the team 
+            is each individual member. 
+            The strength of each member 
+            is the team.” - <span>Tibicle LLP.</span> 
+        </p>
+    </div>
+    <?php
+    $output = ob_get_clean();
+
+    return $output;
+}
+add_shortcode('life_at_section', 'shortcode_life_at');
+
+function hire_section_shortcode() {
+    ob_start();
+    ?>
+    <div class="hire-content ml-180">
+        <div class="left-section">
+            <div class="header-title">
+                <span class="border-text">Hire Tibicle</span>
+                <span>For Your Dream</span>
+            </div>
+            <p>In our world, there's no such thing as having too many clients</p>
+            <div class="contact-info">
+                <div class="contact-section email-section">
+                    <div class="phone-icon bg-pink">
+                        <img src="<?php echo esc_url(get_template_directory_uri()) . '/asset/img/phone-icon.svg'; ?>" alt="icon">             
+                    </div>
+                    <div class="contact-details">
+                        <span>Career Email</span>
+                        <div class="phone-number">info@tibicle.com</div>
+                    </div>
+                </div>
+                <div class="contact-section">
+                    <div class="phone-icon bg-yellow">
+                        <img src="<?php echo esc_url(get_template_directory_uri()) . '/asset/img/phone-icon.svg'; ?>" alt="icon">             
+                    </div>
+                    <div class="contact-details">
+                        <span>Phone</span>
+                        <div class="phone-number">+91 97249 22880</div>
+                    </div>
+                </div>
+            </div>
+            <form>
+                <div class="input-field">
+                    <input type="text" placeholder="Name*">
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="Email*">
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="Phone Number*">
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="Website">
+                </div>
+                <div class="input-field textarea-field">
+                    <textarea name="Message" cols="30" rows="5" placeholder="Write Message"></textarea>
+                </div>
+                <div class="btn-section">
+                    <a href="#">
+                        <button class="btn icon-btn">
+                            Let’s Connect
+                            <div class="icon">
+                                <img src="<?php echo esc_url(get_template_directory_uri()) . '/asset/img/purple-arrow.svg'; ?>" alt="arrow-icon">
+                            </div>
+                        </button>
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div class="right-section">
+            <div class="image">
+                <img src="<?php echo esc_url(get_template_directory_uri()) . '/asset/img/hire-section-img.svg'; ?>" alt="img">
+            </div>
+        </div>
+    </div>
+    <?php
+    $output = ob_get_clean();
+
+    return $output;
+}
+add_shortcode('hire_section', 'hire_section_shortcode');
+
+
+function shortcode_join_tibicle(){
+	return '<div class="join-content">
+		<div class="image">
+		  <img src="' . esc_url(get_template_directory_uri()) . '/asset/img/join-section-bg.svg" alt="bg">
+		</div>
+		<div class="left-section">
+		  <div class="header-title">
+			<span class="border-text">JOIN</span>
+			<span>Tibicle</span>
+		  </div>
+		  <div class="border"></div>
+		  <p>We\'re always on the lookout for talented.</p>
+		  <a href="#">
+			<button class="btn icon-btn">
+			  Apply Now
+			  <div class="icon">
+				<img src="' . esc_url(get_template_directory_uri()) . '/asset/img/arrow-white.svg" alt="arrow-icon">
+			  </div>
+			</button>
+		  </a>
+		</div>
+		<div class="right-section">
+		  <div class="image-icon">
+			<img src="' . esc_url(get_template_directory_uri()) . '/asset/img/join-section-icon.svg" alt="bgjoin-section-icon">
+		  </div>
+		</div>
+	  </div>';
+}
+
+add_shortcode('join_tibicle_section','shortcode_join_tibicle');
+
+

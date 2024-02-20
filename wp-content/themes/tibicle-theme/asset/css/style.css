@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap');
 *{
   margin: 0;
@@ -5,6 +6,7 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
 .page{
   margin: 0 !important;
 }
@@ -82,8 +84,8 @@ a{
 }
 .icon-btn .icon{
   border-radius: 100%;
-  margin-left: 10px;
-  padding: 4px;
+  margin-left: 0.625rem;
+  padding: 0.25rem;
   display: flex;
   align-items: center;
   background: linear-gradient(180deg, #957FFB 0%, #BBACFE 100%);
@@ -438,103 +440,6 @@ a{
   margin-bottom: 0;
 }
 
-
-
-@media only screen and (max-width: 1024px) {
-  .sidebar-open{
-    bottom: 0 !important;
-    top: unset;
-    transform: translateY(0);
-  }
-  .sidebar{
-    width: 100%;
-    left: 0;
-    bottom: -150%;
-    height: 95%;
-    transform: unset;
-  }
-
-  .sidebar .sidebar-header{
-    margin-top: 6.25rem;
-  }
-  .sidebar .sidebar-close-icon{
-    top: 3.13rem;
-    left: 50%;
-    right: unset;
-    width: 5.5rem;
-    height: 5.5rem;
-  }
-   .sidebar .sidebar-close-icon p{
-    font-size: 1.25rem;
-  }
-   .sidebar .sidebar-close-icon p span svg{
-    width: 0.625rem;
-  }
-
-
-  .sidebar-content ul li .item .number{
-    font-size: 1rem;
-  }
-  .sidebar-content ul li .item .item-name a{
-    font-size: 2.125rem;
-  }
-  .sidebar-content ul li .item .item-name p{
-    font-size: 2.75rem;
-    left: 1.25rem;
-  }
-
-
- .menu-section::after{
-    display: none;
-  }
- .menu-section{
-    left: 50%;
-    transform: translateX(50%);
-  }
-  .menu-icon {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    bottom: -40px;
-    top: unset;
-  }
-
- .main-content{
-    margin-left: 0;
-  }
- .menu-section .menu-icon{
-    bottom: 0;
-  }
- .menu-section .menu-icon .menu-btn{
-    width: 5.5rem;
-    height: 5.5rem;
-  }
- .menu-section .menu-icon .menu-btn p{
-    display: flex;
-    font-size: 1.25rem;
-  }
- .menu-section .menu-icon .menu-btn p svg{
-    width: 0.94rem;
-  }
-
-}
-
-
-@media screen and  (max-width:767px){
-  .sidebar-content ul li{
-    margin: 0rem 3.25rem 2rem;
-  }
-  .sidebar-content ul li .item .item-name a{
-    font-size: 1.25rem;
-  }
-  .sidebar-content ul li .item .item-name p{
-    font-size: 1.875rem;
-    top: 0.2rem;
-  }
-}
-
-
 /* sidebar design css end  */
 
 
@@ -544,19 +449,6 @@ a{
     width: calc(100% - 11.25rem);
 }
 
-@media only screen and (max-width: 1024px){
-  .ml-180{
-    margin-left: 0;
-    width: 100%;
-  }
-  .header-content .right-side .contact-section{
-    display: none;
-  }
-  .btn{
-    padding: 0.6rem 2.5rem;
-  }
-}
-
 
 /* home page css start  */
 .main-content{
@@ -564,125 +456,89 @@ a{
   height: 100%;
 }
   
-  .main-content .header-content{
-    padding: 1.5rem 1rem;
-  }
+.main-content .header-content{
+  padding: 1.5rem 1rem;
+}
 
-  /* tiblers section design css start  */
+/* tiblers section design css start  */
 
-  .tiblers-section{
-    height: calc(100vh - 7.125rem);
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .tiblers-section .title{
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.8125rem;
-    letter-spacing: 0.4em;
-    text-align: left; 
-    color: #B6B6B6; 
-  }
-  .tiblers-section .main-title-section{
-    display: flex;
-    align-items: flex-end;
-  }
-  .tiblers-section .main-title-section .sub-title{
-    border-top: 0.0625rem solid #000;
-  }
-  .tiblers-section .main-title-section .sub-title p{
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5rem;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #B6B6B6; 
-    margin: 0;
-    padding-top: 0.3125rem;
-  }
-  .tiblers-section .main-title-section .sub-title p span{
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.5rem;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #525DFE;
-  }
-  .tiblers-section .main-title-section .main-title span{
-    font-size: 6.25rem;
-    font-weight: 700;
-    line-height: 9.375rem;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #0C0908; 
-  }
-  .tiblers-section .main-title-section .main-title p{
-    font-size: 6.25rem;
-    font-weight: 400;
-    line-height: 8rem;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #B6B6B6; 
-    margin-bottom: 0;
-  }
-  .tiblers-section .mouse-section{
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1.875rem;
-    height: 3rem;
-    border-radius: 1rem;
-    border: 0.0625rem solid #000;
-    display: flex;
-    justify-content: center;
-  
-  }
-  .tiblers-section .mouse-section span{
-    width: 0.0625rem;
-    height: 0.7rem;
-    border-radius: 1rem;
-    border: 0.0625rem solid #000;
-    margin-top: 0.3125rem;
-  }
+.tiblers-section{
+  height: calc(100vh - 7.125rem);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+.tiblers-section .title{
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.8125rem;
+  letter-spacing: 0.4em;
+  text-align: left; 
+  color: #B6B6B6; 
+}
+.tiblers-section .main-title-section{
+  display: flex;
+  align-items: flex-end;
+}
+.tiblers-section .main-title-section .sub-title{
+  border-top: 0.0625rem solid #000;
+}
+.tiblers-section .main-title-section .sub-title p{
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #B6B6B6; 
+  margin: 0;
+  padding-top: 0.3125rem;
+}
+.tiblers-section .main-title-section .sub-title p span{
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #525DFE;
+}
+.tiblers-section .main-title-section .main-title span{
+  font-size: 6.25rem;
+  font-weight: 700;
+  line-height: 9.375rem;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0C0908; 
+}
+.tiblers-section .main-title-section .main-title p{
+  font-size: 6.25rem;
+  font-weight: 400;
+  line-height: 8rem;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #B6B6B6; 
+  margin-bottom: 0;
+}
+.tiblers-section .mouse-section{
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.875rem;
+  height: 3rem;
+  border-radius: 1rem;
+  border: 0.0625rem solid #000;
+  display: flex;
+  justify-content: center;
 
-@media only screen and (max-width: 1024px){
-    .tiblers-section{
-      padding: 1rem;
-    }
-    .tiblers-section .main-title-section .main-title span{
-      font-size: 3.75rem;
-      line-height: normal;
-    }
-    .tiblers-section .main-title-section .main-title p{
-      font-size: 3.75rem;
-      line-height: normal;
-    }
-  }
-  @media only screen and (max-width: 767px){
-    .tiblers-section{
-      padding: 1rem;
-    }
-    .tiblers-section .title{
-      font-size: 1rem;
-    }
-    .tiblers-section .main-title-section .main-title span{
-      font-size: 2.625rem;
-      line-height: normal;
-    }
-    .tiblers-section .main-title-section .main-title p{
-      font-size: 2.625rem;
-      line-height: normal;
-    }
-    .tiblers-section .main-title-section .sub-title p{
-    font-size: 0.75rem;
-    }
-    .tiblers-section .main-title-section{
-      flex-direction: column;
-    }
-  }
+}
+.tiblers-section .mouse-section span{
+  width: 0.0625rem;
+  height: 0.7rem;
+  border-radius: 1rem;
+  border: 0.0625rem solid #000;
+  margin-top: 0.3125rem;
+}
 
 /* tiblers section design css end  */
 
@@ -779,23 +635,9 @@ margin: 0.3125rem;
 background-color: #F988A4;
 }
 
-/* slider css start */
-/* .slider-content .slick-list{
-height: 100%;
-overflow: unset;
-}
-.slider-content .slick-list .slick-track{
-height: 100%;
-display: flex;
-} */
 .slider-content .slider:nth-child(odd){
 margin-top: 10%;
 }
-/* .slider-content .slick-list .slick-track .slick-slide{
-margin-right: 9rem;
-min-width: 17.9rem;
-} */
-/* slider css end */
 .slider-content .slider{
 background: #D9D9D9;
 max-width: 23rem;
@@ -821,15 +663,6 @@ border: 0.25rem solid #FFE9BB;
 .slider-content .slider:last-child{
   margin-right: 0rem;
 }
-.slick-dots{
-width: fit-content !important;
-left: 0;
-}
- 
-
-/* .slider-content .slider:nth-child(odd){
- margin-top: 10%
-} */
 
 .slider-content .slider .slider-img{
 width: max-content;
@@ -918,90 +751,6 @@ background-color: #fff;
 }
 
 
-@media only screen and (max-width: 1024px) {
-
-.slider-section .slider-header{
-  margin: 0;
-  padding: 1rem;
-}
-
-.slider-content{
-  height: 100%;
-  /* max-height: calc(100vh - 18rem); */
-  display: flex;
-  margin-left: 6.25rem;
-}
-.slider-section .slider-header .title{
-  font-size: 3.75rem;
-}
-.slider-section .slider-header .title::after{
-  margin-bottom: 1.4rem;
-}
-
-.slider-inner{
-  margin-left: 0;
-  padding: 0;
-  /* max-height: calc(100vh - 16.5rem); */
-}
-.slider-inner .latest-work{
-  bottom: 0;
-}
-
-}
-
-
-@media screen and  (max-width:767px){
-.sidebar-content ul li{
-  margin: 0rem 3.25rem 2rem;
-}
-.sidebar-content ul li .item .item-name a{
-  font-size: 1.25rem;
-}
-.sidebar-content ul li .item .item-name p{
-  font-size: 1.875rem;
-  top: 0.2rem;
-}
-
-.slider-section .slider-header{
-  margin: 0;
-  padding: 1rem;
-}
-.slider-section .slider-header .title{
-  font-size: 2.25rem;
-}
-.slider-section .slider-header .title::after{
-  width: 2rem;
-  margin-bottom: 1rem;
-}
-.slider-section .slider-header .project-btn span{
-  padding: 0rem 0.13rem;
-  font-size: 0.875rem;
-}
-.slider-section .slider-header .project-btn .right-arrow{
-  padding: 0.4rem;
-}
-.slider-content{
-  max-height: calc(100vh - 15.5rem);
-}
-.slider-inner{
-  max-height: calc(100vh - 11.5rem);
-}
-.slider-inner .latest-work{
-  font-size: 0.75rem;
-}
-.slider-inner .latest-work::before{
-  width: 2rem;
-}
-.slider-content .slick-list .slick-track .slick-slide:nth-child(odd){
-  margin-top: 5%;
-}
-.slider-content .slider{
-  height: calc(100vh - 24rem);
-}
-.slider-content .slider .slider-img .project-name span{
-  font-size: 2.25rem;
-}
-}
 
 
 /* services section design css start  */
@@ -1042,7 +791,7 @@ background-color: #fff;
     width: 30%;
     border-right: 0.0625rem solid #C6C6C6;
     border-bottom: 0.0625rem solid #C6C6C6;
-    padding: 2.4rem 4rem 2.4rem;
+    padding: 2.4rem 3rem 2.4rem;
     position: relative;
 }
 .services-section .services-content .services-list .services-item:nth-child(3n+3){
@@ -1053,36 +802,10 @@ background-color: #fff;
     width: 6.5rem;
     height: 6.5rem;
     border-radius: 1.4rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.25rem;
 }
-.services-section .services-content .services-list .services-item .services-icon.dark-sky{
-    background-color: #C3DFE2;
-}
-.services-section .services-content .services-list .services-item .services-icon.dark-pink{
-    background-color: #FFBBBD;
-}
-.services-section .services-content .services-list .services-item .services-icon.dark-brown{
-    background-color: #F2D0B7;
-}
-.services-section .services-content .services-list .services-item .services-icon.light-brown{
-    background-color: #FFE1C4;
-}
-.services-section .services-content .services-list .services-item .services-icon.dark-brown{
-    background-color: #F2D0B7;
-}
-.services-section .services-content .services-list .services-item .services-icon.light-pink{
-    background-color: #FFD2E6;
-}
-.services-section .services-content .services-list .services-item .services-icon.light-sky{
-    background-color: #AAF7FC;
-}
-.services-section .services-content .services-list .services-item .services-icon .icon{
-    width: 7.2rem;
-    height: 7.2rem;
-}
+
 .services-section .services-content .services-list .services-item .services-icon img{
-    margin-top: 2rem;
-    margin-left: 2rem;
     width: 100%;
     height: 100%;
 }
@@ -1276,6 +999,7 @@ background-color: #fff;
 .our-life-section .our-life-content{
   height: 100%;
   position: relative;
+  padding-top: 2rem;
 }
 .our-life-section .our-life-content .tree-image{
   position: absolute;
@@ -1467,33 +1191,33 @@ background-color: #fff;
 
 
 .contact-section{
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  align-items: center;
+}
 .contact-section{
-    display: flex;
-    align-items: center;
-    margin-right: 1.875rem;
-  }
+  display: flex;
+  align-items: center;
+  margin-right: 1.875rem;
+}
 .contact-section .phone-icon{
-    padding: 1rem;
-    border: 0.0625rem solid #fff;
-    margin-right: 0.625rem;
-    border-radius: 100%;
-    display: flex;
-  }
+  padding: 1rem;
+  border: 0.0625rem solid #fff;
+  margin-right: 0.625rem;
+  border-radius: 100%;
+  display: flex;
+}
 .contact-section .contact-details span{
-    font-size: 1rem;
-    line-height: normal;
-    color: #0C0908;
-    font-weight: 600;
-  }
+  font-size: 1rem;
+  line-height: normal;
+  color: #0C0908;
+  font-weight: 600;
+}
 .contact-section .contact-details .phone-number{
-    font-size: 1rem;
-    line-height: normal;
-    color: #A2A2A2;
-    font-weight: 400;
-  }
+  font-size: 1rem;
+  line-height: normal;
+  color: #A2A2A2;
+  font-weight: 400;
+}
 
 
 
@@ -1685,7 +1409,7 @@ background-color: #fff;
 }
 
 .projects-section .heading-section .btn-section .project-btn {
-  background: #3C4755;
+  /* background: #3C4755; */
   box-shadow: 0rem 0rem 0.1875rem 0rem rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
@@ -1934,10 +1658,7 @@ background-color: #fff;
 .project-details-container .project-details-content .project-details .button-section .icon-btn:hover span svg path{
   fill: #fff;
 }
-/* .project-details-container .project-details-content .image-section {
-  width: 100%;
-  height: 100%;
-} */
+
 .project-details-container .project-details-content .image-section .image {
   width: 100%;
   height: 100%;
@@ -1949,6 +1670,160 @@ background-color: #fff;
 
 /* project details page design end  */
 
+/* Life@t  details page design start  */
+.lift-details-container{
+  margin-bottom: 2rem;
+}
+.lift-details-container .lift-details-content{
+  position: relative;
+  display: flex;
+  margin-top: 1.875rem;
+}
+.lift-details-container .lift-details-content .bg-color{
+  width: 100%;
+  height: 80%;
+  position: absolute;
+}
+.lift-details-container .lift-details-content .black-bg{
+  background-color: #0C0908;
+}
+.lift-details-container .lift-details-content .yellow-dark-bg{
+  background-color: #F1AD00;
+}
+.lift-details-container .lift-details-content .purple-bg{
+  background-color: #907AFB;
+}
+.lift-details-container .lift-details-content .green-bg{
+  background-color: #5EC200;
+}
+.lift-details-container .lift-details-content .yellow-bg{
+  background-color: #FFCA39;
+}
+.lift-details-container .lift-details-content .pink-light-bg{
+  background-color: #FF777C;
+}
+.lift-details-container .lift-details-content .left-section{
+  width: 40%;
+  position: relative;
+  z-index: 3;
+  padding: 0.8125rem;
+  max-width: 19rem;
+}
+.lift-details-container .lift-details-content .left-section .name-section{
+  -webkit-text-stroke: 0.0625rem #fff;
+  text-stroke: 0.0625rem #fff;
+  color: transparent;
+  font-size: 3.75rem;
+  font-weight: 600;
+  line-height: 3.75rem;
+  text-align: left;
+  margin-bottom: 2.5rem;
+  margin-top: 6.25rem;
+  text-transform: uppercase;
+}
+.lift-details-container .lift-details-content .left-section .date-section{
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: #fff;
+  position: relative;
+  padding-left: 0.625rem;
+}
+.lift-details-container .lift-details-content .left-section .date-section::after{
+  position: absolute;
+  content: '';
+  top: 0.5625rem;
+  left: 0;
+  width: 0.3125rem;
+  height: 0.3125rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  background: #fff;
+  border-radius: 100%;
+}
+.lift-details-container .lift-details-content .right-section{
+  overflow-y: hidden;
+  overflow-x: scroll;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  margin-top: 2.5rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.lift-details-container .lift-details-content .right-section .row {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0rem 0.3125rem;
+  width: max-content;
+}
+.lift-details-container .lift-details-content .right-section .row .column-1{
+  max-width: 25rem;
+}
+.lift-details-container .lift-details-content .right-section .row .column-1 .h-100{
+  height: 98%;
+}
+.lift-details-container .lift-details-content .right-section .row .column-2{
+  max-width: 13.7rem;
+}
+.lift-details-container .lift-details-content .right-section .row .column-2 .h-30{
+  height: 31.63%;
+}
+.lift-details-container .lift-details-content .right-section .row .column-3{
+  width: 16.8rem;
+}
+.lift-details-container .lift-details-content .right-section .row .column-3 .h-40{
+  height: 36%;
+}
+.lift-details-container .lift-details-content .right-section .row .column-3 .h-60{
+  height: 60%;
+}
+.lift-details-container .lift-details-content .right-section .row .column img{
+  width: 100%;
+  height: 100%;
+  border: 0.0625rem solid #fff;
+  border-radius: 0.25rem;
+  object-fit: none;
+}
+
+/* Life@t  details page design end  */
+
+/* Our Services Details page design start  */
+  
+.our-services-details-container{
+}
+.our-services-details-container .our-services-details-content{
+  display: flex;
+  align-items: center;
+}
+.our-services-details-container .our-services-details-content .left-section{
+  width: 50%;
+}
+.our-services-details-container .our-services-de tails-content .left-section .services-name-section p{
+  font-size: 8.125rem;
+  font-weight: 700;
+  line-height: 8.125rem;
+  margin: 0;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  background-image: linear-gradient(180deg, #FF69B4 0%, #B1035A 93%),linear-gradient(0deg, #FFFFFF, #FFFFFF);
+}
+.our-services-details-container .our-services-details-content .left-section .services-name-section span{
+  -webkit-text-stroke: 0.125rem #5C5C5C;
+  text-stroke: 0.125rem #5C5C5C;
+  color: transparent;
+  font-size: 4.375rem;
+  font-weight: 700;
+  line-height: 6.5625rem;
+
+}
+.our-services-details-container .our-services-details-content .right-section{
+  width: 50%;
+}
+/* Our Services Details page design end */
 
 /*  ------------------------------------------- responsive design css start ------------------------------------------- */
 
@@ -1965,20 +1840,151 @@ background-color: #fff;
 
 @media only screen and (max-width: 1024px) {
   
-/* home page css start */
+
+  .ml-180{
+    margin-left: 0;
+    width: 100%;
+  }
+  .header-content .right-side .contact-section{
+    display: none;
+  }
+  .btn{
+    padding: 0.6rem 2.5rem;
+  }
+
+   /* sidebar design css start  */
+  .sidebar-open{
+    bottom: 0 !important;
+    top: unset;
+    transform: translateY(0);
+  }
+  .sidebar{
+    width: 100%;
+    left: 0;
+    bottom: -150%;
+    height: 95%;
+    transform: unset;
+  }
+
+  .sidebar .sidebar-header{
+    margin-top: 6.25rem;
+  }
+  .sidebar .sidebar-close-icon{
+    top: 3.13rem;
+    left: 50%;
+    right: unset;
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+    .sidebar .sidebar-close-icon p{
+    font-size: 1.25rem;
+  }
+    .sidebar .sidebar-close-icon p span svg{
+    width: 0.625rem;
+  }
+
+  .sidebar-content ul li .item .number{
+    font-size: 1rem;
+  }
+  .sidebar-content ul li .item .item-name a{
+    font-size: 2.125rem;
+  }
+  .sidebar-content ul li .item .item-name p{
+    font-size: 2.75rem;
+    left: 1.25rem;
+  }
+
+  .menu-section::after{
+    display: none;
+  }
+  .menu-section{
+    left: 50%;
+    transform: translateX(50%);
+  }
+  .menu-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    bottom: -2.5rem;
+    top: unset;
+  }
+
+  .main-content{
+    margin-left: 0;
+  }
+  .menu-section .menu-icon{
+    bottom: 0;
+  }
+  .menu-section .menu-icon .menu-btn{
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+  .menu-section .menu-icon .menu-btn p{
+    display: flex;
+    font-size: 1.25rem;
+  }
+  .menu-section .menu-icon .menu-btn p svg{
+    width: 0.94rem;
+  }
+  /* sidebar design css end  */
 
 
+  /* home page css start */
 
+  /* tiblers section design css start  */
+  .tiblers-section{
+    padding: 1rem;
+  }
+  .tiblers-section .main-title-section .main-title span{
+    font-size: 3.75rem;
+    line-height: normal;
+  }
+  .tiblers-section .main-title-section .main-title p{
+    font-size: 3.75rem;
+    line-height: normal;
+  }
+ /* tiblers section design css end  */
 
-/* services section design css start  */
+  /* slider-section design css start  */
+
+  .slider-section .slider-header{
+    margin: 0;
+    padding: 1rem;
+  }
+  
+  .slider-content{
+    height: 100%;
+    /* max-height: calc(100vh - 18rem); */
+    display: flex;
+    margin-left: 6.25rem;
+  }
+  .slider-section .slider-header .title{
+    font-size: 3.75rem;
+  }
+  .slider-section .slider-header .title::after{
+    margin-bottom: 1.4rem;
+  }
+  
+  .slider-inner{
+    margin-left: 0;
+    padding: 0;
+    /* max-height: calc(100vh - 16.5rem); */
+  }
+  .slider-inner .latest-work{
+    bottom: 0;
+  }
+  /* slider-section design css end  */
+
+  /* services section design css start  */
   .services-section .services-content .services-list .services-item{
       padding: 1.5rem 1rem;
   }
 
-/* services section design css end  */
+  /* services section design css end  */
 
 
-/* hire section design css start  */
+  /* hire section design css start  */
   .hire-section .hire-content{
     flex-wrap: wrap;
     flex-direction: column-reverse;
@@ -2008,9 +2014,9 @@ background-color: #fff;
   }
 
 
-/* hire section design css end  */
+  /* hire section design css end  */
 
-/* join section design css start  */
+  /* join section design css start  */
   .join-content{
     padding: 1rem;
   }
@@ -2023,7 +2029,7 @@ background-color: #fff;
     padding-top: 0rem;
   }
   
-/* join section design css end  */
+  /* join section design css end  */
 
    /* our life@t page design start  */
   .our-life-section .our-life-content .our-life{
@@ -2048,7 +2054,7 @@ background-color: #fff;
   /* home page css end */
 
 
-/* all-projects page design start  */
+  /* all-projects page design start  */
   .projects-section {
     width: 100%;
     margin-left: 0;
@@ -2067,9 +2073,9 @@ background-color: #fff;
   .projects-section .project-list{
     padding: 0 2rem;
   }
-/* all-projects page design end  */
+  /* all-projects page design end  */
 
-/* footer design css start */
+  /* footer design css start */
 
   .footer-section .footer-content{
     flex-wrap: wrap;
@@ -2083,7 +2089,7 @@ background-color: #fff;
     min-height: 12.5rem;
     margin-top: 2rem;
   }
-/* footer design css end */
+  /* footer design css end */
 
 
 
@@ -2105,11 +2111,105 @@ background-color: #fff;
 
 
 @media screen and  (max-width:767px){
-/* home page design css start  */
+
+ 
+  
+  
+  /* sidebar design css start  */
+  .sidebar-content ul li{
+    margin: 0rem 3.25rem 2rem;
+  }
+  .sidebar-content ul li .item .item-name a{
+    font-size: 1.25rem;
+  }
+  .sidebar-content ul li .item .item-name p{
+    font-size: 1.875rem;
+    top: 0.2rem;
+  }
+  /* sidebar design css end  */
 
 
 
-/* services section design css start  */
+  /* home page design css start  */
+
+ 
+  /* tiblers section design css start  */
+  .tiblers-section{
+    padding: 1rem;
+  }
+  .tiblers-section .title{
+    font-size: 1rem;
+  }
+  .tiblers-section .main-title-section .main-title span{
+    font-size: 2.625rem;
+    line-height: normal;
+  }
+  .tiblers-section .main-title-section .main-title p{
+    font-size: 2.625rem;
+    line-height: normal;
+  }
+  .tiblers-section .main-title-section .sub-title p{
+  font-size: 0.75rem;
+  }
+  .tiblers-section .main-title-section{
+    flex-direction: column;
+  }
+
+  /* tiblers section design css end  */
+    
+  /* slider-section design css start  */
+  .sidebar-content ul li{
+    margin: 0rem 3.25rem 2rem;
+  }
+  .sidebar-content ul li .item .item-name a{
+    font-size: 1.25rem;
+  }
+  .sidebar-content ul li .item .item-name p{
+    font-size: 1.875rem;
+    top: 0.2rem;
+  }
+  
+  .slider-section .slider-header{
+    margin: 0;
+    padding: 1rem;
+  }
+  .slider-section .slider-header .title{
+    font-size: 2.25rem;
+  }
+  .slider-section .slider-header .title::after{
+    width: 2rem;
+    margin-bottom: 1rem;
+  }
+  .slider-section .slider-header .project-btn span{
+    padding: 0rem 0.13rem;
+    font-size: 0.875rem;
+  }
+  .slider-section .slider-header .project-btn .right-arrow{
+    padding: 0.4rem;
+  }
+  .slider-content{
+    max-height: calc(100vh - 15.5rem);
+  }
+  .slider-inner{
+    max-height: calc(100vh - 11.5rem);
+  }
+  .slider-inner .latest-work{
+    font-size: 0.75rem;
+  }
+  .slider-inner .latest-work::before{
+    width: 2rem;
+  }
+  .slider-content .slick-list .slick-track .slick-slide:nth-child(odd){
+    margin-top: 5%;
+  }
+  .slider-content .slider{
+    height: calc(100vh - 24rem);
+  }
+  .slider-content .slider .slider-img .project-name span{
+    font-size: 2.25rem;
+  }
+
+  /* services section design css start  */
 
   .services-section .services-content .header-title {
       padding-top: 2.3rem;
@@ -2135,9 +2235,9 @@ background-color: #fff;
       border-bottom: none;
   }
 
-/* services section design css end  */
+  /* services section design css end  */
 
-/* hire section design css start  */
+  /* hire section design css start  */
   .hire-section .hire-content .left-section .contact-info{
     flex-wrap: wrap;
     margin: 0rem;
@@ -2153,10 +2253,10 @@ background-color: #fff;
   }
   
   
-/* hire section design css end  */
+  /* hire section design css end  */
 
 
-/* home page design css end  */
+  /* home page design css end  */
 
   /* all-projects page design start  */
   .projects-section .heading-section {
@@ -2174,6 +2274,40 @@ background-color: #fff;
   }
 
   /* all-projects page design end  */
+
+  /* Life@t  details page design start  */
+  .lift-details-container .lift-details-content{
+    flex-direction: column;
+  }
+  .lift-details-container .lift-details-content .left-section{
+    width: 100%;
+  }
+  .lift-details-container .lift-details-content .left-section .name-section{
+    margin: 1.5rem 0rem;
+    font-size: 2rem;
+    line-height: normal;
+  }
+
+  .lift-details-container .lift-details-content .right-section{
+    margin-top: 1rem;
+  }
+  .lift-details-container .lift-details-content .right-section .row .column{
+    height: 9.75rem;
+  }
+  .lift-details-container .lift-details-content .right-section .row .column-2 .h-30{
+    height: 98%;
+  }
+  .lift-details-container .lift-details-content .right-section .row .column-3 .h-40{
+    height: 98%;
+  }
+  .lift-details-container .lift-details-content .right-section .row .column-3 .h-60{
+    height: 98%;
+  }
+  /* Life@t  details page design end  */
+
+
+
+
 
  
   /* footer design css start */
@@ -2204,5 +2338,40 @@ background-color: #fff;
 
 
 
+}
+
+
+@media screen and (max-height: 700px) {
+  .slider-content{
+    max-height: calc(100vh - 9.5rem);
+  }
+  .slider-content .slider{
+    margin-right: 6rem;
+    max-width: 16rem;
+  }
+
+  .hire-section .hire-content .left-section .header-title{
+    padding-top: 3.3rem;
+    margin-top: 3rem;
+  }
+  .hire-section .left-section .header-title .border-text{
+    top: 1rem;
+  }
+  .hire-section .hire-content .left-section p{
+    margin-top: 1rem;
+  }
+  .hire-section .hire-content .left-section .contact-info{
+    margin: 1rem 0rem;
+  }
+  .hire-section .hire-content .left-section form{
+    gap: 1.5rem;
+  }
+  .header-title span{
+    font-size: 2.5rem
+  }
+
+  .join-section .join-content .image{
+    height: calc(100% - 4rem);
+  }
 }
 /*  ------------------------------------------- responsive design css start ------------------------------------------- */
